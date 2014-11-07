@@ -28,6 +28,7 @@ public class TicketMachine
     public TicketMachine(int cost)
     {
         price = cost;
+        discountPrice = cost * ((100 - discount) / 100.0);
         balance = 0;
         total = 0;
     }
