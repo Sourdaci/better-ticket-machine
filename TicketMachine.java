@@ -100,6 +100,9 @@ public class TicketMachine
         return amountToRefund;
     }
     
+    /**
+     * Devuelve el dinero que falta meter para poder sacar un ticket
+     */
     public int getAmountLeftToPay()
     {
         int amountLeftToPay = 0;
@@ -108,5 +111,14 @@ public class TicketMachine
             amountLeftToPay = price - balance;
         }
         return amountLeftToPay;
+    }
+    
+    /**
+     * Vacia por completo la maquina
+     */
+    public int emptyMachine(){
+        int existentMoney = total;
+        total = 0;
+        return existentMoney;
     }
 }
