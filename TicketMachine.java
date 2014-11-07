@@ -14,9 +14,9 @@ public class TicketMachine
     // The price of a ticket from this machine.
     private int price;
     // The amount of money entered by a customer so far.
-    private int balance;
+    private double balance;
     // The total amount of money collected by this machine.
-    private int total;
+    private double total;
     // The price of a discount ticket from this machine
     private double discountPrice;
     // The discount to be applied to the tickets of the machine
@@ -53,7 +53,7 @@ public class TicketMachine
      * Return The amount of money already inserted for the
      * next ticket.
      */
-    public int getBalance()
+    public double getBalance()
     {
         return balance;
     }
@@ -95,7 +95,7 @@ public class TicketMachine
             balance = balance - price;
         }
         else {
-            int amountLeftToPay = price - balance;
+            double amountLeftToPay = price - balance;
             System.out.println("You must insert at least: " +
             //Sustituido "price - balance" por variable local
                                amountLeftToPay + " more cents.");
@@ -107,9 +107,9 @@ public class TicketMachine
      * Return the money in the balance.
      * The balance is cleared.
      */
-    public int refundBalance()
+    public double refundBalance()
     {
-        int amountToRefund;
+        double amountToRefund;
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
@@ -118,9 +118,9 @@ public class TicketMachine
     /**
      * Devuelve el dinero que falta meter para poder sacar un ticket
      */
-    public int getAmountLeftToPay()
+    public double getAmountLeftToPay()
     {
-        int amountLeftToPay = 0;
+        double amountLeftToPay = 0;
         if (price > balance)
         {
             amountLeftToPay = price - balance;
@@ -131,8 +131,8 @@ public class TicketMachine
     /**
      * Vacia por completo la maquina
      */
-    public int emptyMachine(){
-        int existentMoney = total;
+    public double emptyMachine(){
+        double existentMoney = total;
         total = 0;
         return existentMoney;
     }
