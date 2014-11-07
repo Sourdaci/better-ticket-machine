@@ -17,4 +17,6 @@ comment4.text=\r\n\ Print\ a\ ticket\ if\ enough\ money\ has\ been\ inserted,\ a
 comment5.params=
 comment5.target=int\ refundBalance()
 comment5.text=\r\n\ Return\ the\ money\ in\ the\ balance.\r\n\ The\ balance\ is\ cleared.\r\n
-numComments=6
+comment6.params=
+comment6.target=int\ getAmountLeftToPay()
+numComments=7
