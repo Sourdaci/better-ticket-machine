@@ -40,6 +40,14 @@ public class TicketMachine
     {
         return price;
     }
+    
+    /**
+     * @Return the price of a discount ticket
+     */
+    public double getDiscountPrice()
+    {
+        return discountPrice;
+    }
 
     /**
      * Return The amount of money already inserted for the
