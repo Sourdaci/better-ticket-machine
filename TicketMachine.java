@@ -79,6 +79,12 @@ public class TicketMachine
     {
         return discount;
     }
+    
+    public boolean setCanDiscount(boolean ableToDiscount)
+    {
+        canDiscount = ableToDiscount;
+        return canDiscount;
+    }
 
     /**
      * Receive an amount of money from a customer.
