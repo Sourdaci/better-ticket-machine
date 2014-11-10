@@ -20,14 +20,19 @@ public class TicketMachine
     // The price of a discount ticket from this machine
     private double discountPrice;
     // The discount to be applied to the tickets of the machine
-    private double discount = 10;
+    private double discount;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, double discountAmount)
     {
         price = cost;
+        if (discountAmount >= 0 && discountAmount < 100){
+            discount = discountAmount;
+        }else{
+            discount = 0;
+        }
         discountPrice = cost * ((100 - discount) / 100.0);
         balance = 0;
         total = 0;
