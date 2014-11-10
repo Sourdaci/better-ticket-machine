@@ -12,7 +12,7 @@
 public class TicketMachine
 {
     // The price of a ticket from this machine.
-    private int price;
+    private double price;
     // The amount of money entered by a customer so far.
     private double balance;
     // The total amount of money collected by this machine.
@@ -25,7 +25,7 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost, double discountAmount)
+    public TicketMachine(double cost, double discountAmount)
     {
         price = cost;
         if (discountAmount >= 0 && discountAmount < 100){
@@ -33,7 +33,7 @@ public class TicketMachine
         }else{
             discount = 0;
         }
-        discountPrice = cost * ((100 - discount) / 100.0);
+        discountPrice = cost * ((100 - discount) / 100);
         balance = 0;
         total = 0;
     }
@@ -41,7 +41,7 @@ public class TicketMachine
     /**
      * @Return The price of a ticket.
      */
-    public int getPrice()
+    public double getPrice()
     {
         return price;
     }
@@ -75,7 +75,7 @@ public class TicketMachine
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
-    public void insertMoney(int amount)
+    public void insertMoney(double amount)
     {
         if(amount > 0) {
             balance = balance + amount;
@@ -98,7 +98,7 @@ public class TicketMachine
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + price + " euro(s).");
             System.out.println("##################");
             System.out.println();
 
@@ -128,7 +128,7 @@ public class TicketMachine
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + discountPrice + " cents.");
+            System.out.println("# " + discountPrice + " euro(s).");
             System.out.println("##################");
             System.out.println();
 
@@ -141,7 +141,7 @@ public class TicketMachine
             //Creacion de variable local y asignacion de valor
             double amountLeftToPay = discountPrice - balance;
             System.out.println("You must insert at least: " +
-                               amountLeftToPay + " more cents.");
+                               amountLeftToPay + " more euro(s).");
                     
         }
     }

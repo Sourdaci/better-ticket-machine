@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.params=cost\ discountAmount
-comment0.target=TicketMachine(int,\ double)
+comment0.target=TicketMachine(double,\ double)
 comment0.text=\r\n\ Create\ a\ machine\ that\ issues\ tickets\ of\ the\ given\ price.\r\n
 comment1.params=
-comment1.target=int\ getPrice()
+comment1.target=double\ getPrice()
 comment1.text=\r\n\ @Return\ The\ price\ of\ a\ ticket.\r\n
 comment10.params=
 comment10.target=double\ emptyMachine()
@@ -18,7 +18,7 @@ comment4.params=
 comment4.target=double\ getDiscount()
 comment4.text=\r\n\ Return\ the\ discount\ value\ to\ be\ applied\ to\ the\ tickets\r\n
 comment5.params=amount
-comment5.target=void\ insertMoney(int)
+comment5.target=void\ insertMoney(double)
 comment5.text=\r\n\ Receive\ an\ amount\ of\ money\ from\ a\ customer.\r\n\ Check\ that\ the\ amount\ is\ sensible.\r\n
 comment6.params=
 comment6.target=void\ printTicket()
