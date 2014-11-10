@@ -138,26 +138,30 @@ public class TicketMachine
      */
     public void printDiscountTicket()
     {
-        if(balance >= price) {
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + discountPrice + " euro(s).");
-            System.out.println("##################");
-            System.out.println();
-
-            // Update the total collected with the price.
-            total = total + discountPrice;
-            // Reduce the balance by the prince.
-            balance = balance - discountPrice;
-        }
-        else {
-            //Creacion de variable local y asignacion de valor
-            double amountLeftToPay = discountPrice - balance;
-            System.out.println("You must insert at least: " +
-                               amountLeftToPay + " more euro(s).");
-                    
+        if(canDiscount == true){
+            if(balance >= price) {
+                // Simulate the printing of a ticket.
+                System.out.println("##################");
+                System.out.println("# The BlueJ Line");
+                System.out.println("# Ticket");
+                System.out.println("# " + discountPrice + " euro(s).");
+                System.out.println("##################");
+                System.out.println();
+    
+                // Update the total collected with the price.
+                total = total + discountPrice;
+                // Reduce the balance by the prince.
+                balance = balance - discountPrice;
+            }
+            else {
+                //Creacion de variable local y asignacion de valor
+                double amountLeftToPay = discountPrice - balance;
+                System.out.println("You must insert at least: " +
+                                   amountLeftToPay + " more euro(s).");
+                        
+            }
+        }else{
+            System.out.println("This machine can't print discount tickets");
         }
     }
 
