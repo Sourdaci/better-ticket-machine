@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=cost\ discountAmount
-comment0.target=TicketMachine(double,\ double)
+comment0.params=cost\ discountAmount\ ableToDiscount
+comment0.target=TicketMachine(double,\ double,\ boolean)
 comment0.text=\r\n\ Create\ a\ machine\ that\ issues\ tickets\ of\ the\ given\ price.\r\n
 comment1.params=
 comment1.target=double\ getPrice()

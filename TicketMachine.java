@@ -21,19 +21,28 @@ public class TicketMachine
     private double discountPrice;
     // The discount to be applied to the tickets of the machine
     private double discount;
+    // Makes the TicketMachine able to print discount tickets
+    private boolean canDiscount;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(double cost, double discountAmount)
+    public TicketMachine(double cost, double discountAmount, boolean ableToDiscount)
     {
         price = cost;
-        if (discountAmount >= 0 && discountAmount < 100){
-            discount = discountAmount;
+        if (ableToDiscount == true)
+        {
+            if (discountAmount >= 0 && discountAmount < 100){
+                discount = discountAmount;
+            }else{
+                discount = 0;
+            }
+            discountPrice = cost * ((100 - discount) / 100);
         }else{
+            discountPrice = cost;
             discount = 0;
         }
-        discountPrice = cost * ((100 - discount) / 100);
+        canDiscount = ableToDiscount;
         balance = 0;
         total = 0;
     }
@@ -111,7 +120,7 @@ public class TicketMachine
             double amountLeftToPay = price - balance;
             System.out.println("You must insert at least: " +
             //Sustituido "price - balance" por variable local
-                               amountLeftToPay + " more cents.");
+                               amountLeftToPay + " more euro(s).");
                     
         }
     }
