@@ -62,6 +62,14 @@ public class TicketMachine
     {
         return balance;
     }
+    
+    /**
+     * Return the discount value to be applied to the tickets
+     */
+    public double getDiscount()
+    {
+        return discount;
+    }
 
     /**
      * Receive an amount of money from a customer.
