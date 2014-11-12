@@ -25,7 +25,7 @@ public class TicketMachine
     private boolean canDiscount;
 
     /**
-     * Create a machine that issues tickets of the given price.
+     * Create a machine that issues tickets of the given price, and maybe capable of print discount tickets.
      */
     public TicketMachine(double cost, double discountAmount, boolean ableToDiscount)
     {
@@ -40,7 +40,11 @@ public class TicketMachine
             discountPrice = cost * ((100 - discount) / 100);
         }else{
             discountPrice = cost;
-            discount = 0;
+            if (discountAmount >= 0 && discountAmount < 100){
+                discount = discountAmount;
+            }else{
+                discount = 0;
+            }
         }
         canDiscount = ableToDiscount;
         balance = 0;
@@ -64,8 +68,7 @@ public class TicketMachine
     }
 
     /**
-     * Return The amount of money already inserted for the
-     * next ticket.
+     * Return The amount of money already inserted for the next ticket.
      */
     public double getBalance()
     {
@@ -80,10 +83,24 @@ public class TicketMachine
         return discount;
     }
     
+    /**
+     * Change the machine ability to print discount tickets (true or false)
+     */
     public boolean setCanDiscount(boolean ableToDiscount)
     {
         canDiscount = ableToDiscount;
         return canDiscount;
+    }
+    
+    /**
+     * Change the discount to be applied to discount tickets
+     */
+    public double setDiscount(double discountAmount)
+    {
+        if (discountAmount >= 0 && discountAmount < 100){
+            discount = discountAmount;
+        }
+        return discount;
     }
 
     /**
@@ -134,12 +151,12 @@ public class TicketMachine
     /**
      * Print a DISCOUNT ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
+     * an error message if more money is required OR machine can't print discount tickets.
      */
     public void printDiscountTicket()
     {
         if(canDiscount == true){
-            if(balance >= price) {
+            if(balance >= discountPrice) {
                 // Simulate the printing of a ticket.
                 System.out.println("##################");
                 System.out.println("# The BlueJ Line");
